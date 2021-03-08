@@ -9,7 +9,7 @@ const windowHeight = Dimensions.get('window').height;
 const HomeScreen = () => {
     return (
         <View >
-            
+            <StatusBar barStyle="light-content"></StatusBar>
             <View style={styles.blueArea}>
                 <Header></Header>
             </View>
