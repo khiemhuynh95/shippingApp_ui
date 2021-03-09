@@ -5,28 +5,35 @@ import { Avatar} from 'react-native-elements';
 import MyIcons from './MyIcons'
 
 import colors from '../assets/colors/colors';
-
+import AppLoading from 'expo-app-loading';
 import { useFonts } from "expo-font";
 
 const Header =() => {
     let [loadedfont] = useFonts({
-        'Roboto_Med': require('../assets/fonts/Roboto-Medium.ttf'),
-        'Roboto_Reg': require('../assets/fonts/Roboto-Regular.ttf')
-    })
-    return(
-        <View style={styles.container}> 
-            <Avatar
-                rounded
-                source={require('./../assets/images/cat.jpg')}
-                size={40}
-            ></Avatar>
-            <View style={styles.textWrapper}>
-                <Text style={styles.title}>Tracker App</Text>
-                <Text style={styles.subTitle}>Powered by Panoply</Text>
-            </View>
-            <MyIcons size={20} source={require('./../assets/images/ios-settings.png')}></MyIcons>
-        </View>
-    )
+        'Roboto-Medium': require('../assets/fonts/Roboto-Medium.ttf'),
+        'Roboto-Regular': require('../assets/fonts/Roboto-Regular.ttf')
+    });
+    if(!loadedfont) {
+        return <AppLoading></AppLoading>
+    }
+    else {
+            return(
+                <View style={styles.container}> 
+                    <Avatar
+                        rounded
+                        source={require('./../assets/images/cat.jpg')}
+                        size={40}
+                    ></Avatar>
+                    <View style={styles.textWrapper}>
+                        <Text style={styles.title}>Tracker App</Text>
+                        <Text style={styles.subTitle}>Powered by Panoply</Text>
+                    </View>
+                    <MyIcons size={20} source={require('./../assets/images/ios-settings.png')}></MyIcons>
+                </View>
+            )
+    }
+        
+    
 }
 
 const styles = StyleSheet.create({
@@ -36,7 +43,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         
         marginTop: 60,
-        marginHorizontal: 30
+        marginHorizontal: 30,
     },
     textWrapper: {
         alignItems: 'center',
@@ -46,7 +53,7 @@ const styles = StyleSheet.create({
     },
     title: {
         color: colors.white,
-        fontFamily: 'Roboto_Med',
+        fontFamily: 'Roboto-Medium',
         fontWeight: '500',
         fontSize: 14,
         lineHeight: 16,
@@ -56,7 +63,7 @@ const styles = StyleSheet.create({
     },
     subTitle: {
         color: colors.lightBlue,
-        fontFamily: 'Roboto_Reg',
+        fontFamily: 'Roboto-Regular',
         fontSize: 12,
         lineHeight: 14,
         fontWeight:'normal',
