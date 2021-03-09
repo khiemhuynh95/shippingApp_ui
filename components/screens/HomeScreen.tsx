@@ -1,10 +1,29 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, SafeAreaView,StatusBar } from 'react-native';
+import { StyleSheet, Text, View, Image, SafeAreaView,StatusBar, FlatList } from 'react-native';
 import  Header  from '.././Header';
 import colors from '../../assets/colors/colors';
 import SearchBar from '../SearchBar';
 import SubHeader from '../SubHeader'
+import Item from '../myservices/Item'
 
+const data = [
+    {
+        icon: require('../../assets/images/fly.png'),
+        title: 'Shipping',
+        subtitle: 'Secure Delivery'
+    },
+    {
+        icon: require('../../assets/images/location.png'),
+        title: 'Location',
+        subtitle: 'Nation Wide'
+    }
+]
+const keyExtractor = (item) => item.title;
+const renderItem = ({item}) => {
+    return (
+      <Item data={item}></Item>
+    );
+  };
 
 const HomeScreen = () => {
     const background_img1 = require('../../assets/images/1.png')
@@ -31,7 +50,20 @@ const HomeScreen = () => {
                     <Image source={background_img2}></Image>
                 </View>
             </View>
-            <SubHeader style={styles.subHeader}></SubHeader>
+
+            
+            <View style={styles.bottomArea}>
+                
+                <SubHeader style={styles.subHeader}></SubHeader>
+                <FlatList
+                    horizontal={true}
+                    data={data}
+                    showsHorizontalScrollIndicator={false}
+                    keyExtractor={keyExtractor}
+                    renderItem={renderItem}
+                />
+            </View>
+            
         </View>
     );
 }
@@ -54,7 +86,7 @@ const styles = StyleSheet.create({
          height: 3
         },
         shadowRadius: 4,
-        shadowOpacity: 0.3
+        shadowOpacity: 0.4
         
     },
     image_area: {
@@ -95,14 +127,17 @@ const styles = StyleSheet.create({
         letterSpacing: -0.25,
     },
     subHeader: {
-        bottom: 250,
-        alignSelf: 'center'
+        right: 20,
+        alignSelf: 'center',
+        marginBottom: 30,
+        
     },
 
     bottomArea: {
+        bottom: 275,
         
-        backgroundColor: colors.black,
-        zIndex: 0
+        
+        width: '100%'
     },
 
 

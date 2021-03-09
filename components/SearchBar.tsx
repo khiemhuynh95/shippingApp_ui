@@ -10,7 +10,7 @@ const SearchBar = () => {
     
     return(
         <View style={styles.container}>
-            <MyIcons style={styles.filling_icon} source={filling_icon} size={20} ></MyIcons>
+            <MyIcons disabled={true} style={styles.filling_icon} source={filling_icon} size={20} ></MyIcons>
             
                 
             <TextInput
@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     },
     textInput: {
         alignSelf: 'stretch',
-        //backgroundColor: 'black',
+        fontFamily: 'Roboto-Regular',
         width: '70%'
     },
     filling_icon: {
