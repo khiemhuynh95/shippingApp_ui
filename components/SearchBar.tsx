@@ -1,21 +1,26 @@
 import React from 'react'
-import {Text, View, StyleSheet, TextInput} from 'react-native'
+import {Text, View, StyleSheet, TextInput, Image} from 'react-native'
 import MyIcons from './MyIcons'
+
 
 const SearchBar = () => {
     const [value, onChangeText] = React.useState('');
     const filling_icon = require('./../assets/images/ios-filling.png')
     const go_icon = require('./../assets/images/ios-go.png')
+    
     return(
         <View style={styles.container}>
-            <MyIcons source={filling_icon} size={20} ></MyIcons>
+            <MyIcons style={styles.filling_icon} source={filling_icon} size={20} ></MyIcons>
+            
+                
             <TextInput
                 style={styles.textInput}
                 placeholder="eg. 4729012"
                 onChangeText={text => onChangeText(text)}
                 value={value}
             ></TextInput>
-            <MyIcons style={styles.filling_icon} source={go_icon} size={25} ></MyIcons>
+            
+            <MyIcons style={styles.go_icon} source={go_icon} size={25} ></MyIcons>
         </View>
     )
 }
@@ -23,7 +28,7 @@ const SearchBar = () => {
 const styles = StyleSheet.create({
     container: {
         backgroundColor: 'white',
-        width: 315,
+        width: 340,
         height: 60,
         
         alignSelf:'center',
@@ -34,8 +39,9 @@ const styles = StyleSheet.create({
         
     },
     textInput: {
-       
-        alignSelf: 'stretch'
+        alignSelf: 'stretch',
+        //backgroundColor: 'black',
+        width: '70%'
     },
     filling_icon: {
         

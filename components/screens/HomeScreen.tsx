@@ -1,27 +1,37 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, SafeAreaView, Dimensions,StatusBar } from 'react-native';
+import { StyleSheet, Text, View, Image, SafeAreaView,StatusBar } from 'react-native';
 import  Header  from '.././Header';
 import colors from '../../assets/colors/colors';
 import SearchBar from '../SearchBar';
+import SubHeader from '../SubHeader'
 
-const windowWidth = Dimensions.get('window').width;
-const windowHeight = Dimensions.get('window').height;
 
 const HomeScreen = () => {
+    const background_img1 = require('../../assets/images/1.png')
+    const background_img2 = require('../../assets/images/2.png')
     return (
-        <View >
+        <View style={styles.container}>
+            
             <StatusBar barStyle="light-content"></StatusBar>
+            
             <View style={styles.blueArea}>
                 <Header></Header>
                 <View style={styles.textWrapper}>
-                    <Text style={styles.title}>Track your Shipment</Text>
+                    <Text style={styles.title}>Track your Shippment</Text>
                     <Text style={styles.subTitle}>Enter tracking code</Text>
                 </View>
                 <SearchBar></SearchBar>
+                
             </View>
-            <View style={styles.whiteArea}>
-
+            <View style={styles.image_area}>
+                <View style={styles.image_box1}>
+                    <Image source={background_img1}></Image>
+                </View>
+                <View style={styles.image_box2}>
+                    <Image source={background_img2}></Image>
+                </View>
             </View>
+            <SubHeader style={styles.subHeader}></SubHeader>
         </View>
     );
 }
@@ -36,9 +46,28 @@ const styles = StyleSheet.create({
     },
     blueArea: {
         backgroundColor: colors.blue,
-        height: 550
+        height: 570,
+        borderBottomRightRadius: 30,
+        shadowColor: '#000000',
+        shadowOffset: {
+          width: 0,
+         height: 3
+        },
+        shadowRadius: 4,
+        shadowOpacity: 0.3
+        
     },
-
+    image_area: {
+        bottom: 285,
+        flexDirection: 'row'
+    },
+    image_box1: {
+        top: 40
+    },
+    image_box2: {
+        left: 35,
+        top: 5
+    },
     textWrapper: {
         alignItems: 'center',
         justifyContent: 'center',
@@ -65,9 +94,15 @@ const styles = StyleSheet.create({
         fontWeight:'normal',
         letterSpacing: -0.25,
     },
+    subHeader: {
+        bottom: 250,
+        alignSelf: 'center'
+    },
 
-    whiteArea: {
-        backgroundColor: colors.white
+    bottomArea: {
+        
+        backgroundColor: colors.black,
+        zIndex: 0
     },
 
 

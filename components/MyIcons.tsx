@@ -1,9 +1,10 @@
 import React from 'react'
 import {View, Image, TouchableOpacity} from 'react-native'
 
-const MyIcons = ({size, source,... style}) => {
+const MyIcons = (props) => {
+    const {size, source, style} = props;
     return (
-        <TouchableOpacity style={[{width: size, height: size}]}>
+        <TouchableOpacity style={[{width: size, height: size},style]}>
             <Image source={source} style={{width: size, height: size}}></Image>
         </TouchableOpacity>
         
