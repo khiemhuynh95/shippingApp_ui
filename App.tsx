@@ -5,7 +5,8 @@ import HomeScreen from './components/screens/HomeScreen';
 import HistoryScreen from './components/screens/HistoryScreen';
 export default function App() {
   return (
-    <HomeScreen></HomeScreen>
+    // <HomeScreen></HomeScreen>
+    <HistoryScreen></HistoryScreen>
   );
 }
 

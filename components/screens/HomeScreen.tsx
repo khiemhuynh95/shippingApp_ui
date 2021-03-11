@@ -1,10 +1,10 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, SafeAreaView,StatusBar, FlatList } from 'react-native';
-import  Header  from '.././Header';
+import  Header  from '../headers/Header';
 import colors from '../../assets/colors/colors';
 import SearchBar from '../SearchBar';
-import SubHeader from '../SubHeader'
-import Item from '../myservices/Item'
+import SubHeader from '../headers/SubHeader'
+import ServiceItem from '../items/ServiceItem'
 
 const data = [
     {
@@ -21,9 +21,9 @@ const data = [
 const keyExtractor = (item) => item.title;
 const renderItem = ({item}) => {
     return (
-      <Item data={item}></Item>
+      <ServiceItem data={item}></ServiceItem>
     );
-  };
+};
 
 const HomeScreen = () => {
     const background_img1 = require('../../assets/images/1.png')
@@ -52,9 +52,11 @@ const HomeScreen = () => {
             </View>
 
             
-            <View style={styles.bottomArea}>
-                
-                <SubHeader style={styles.subHeader}></SubHeader>
+            <View style={styles.bottomArea}>     
+                <SubHeader  title="My Services" 
+                            titleStyle={{marginRight: 180}} 
+                            style={styles.subHeader}>            
+                </SubHeader>
                 <FlatList
                     horizontal={true}
                     data={data}

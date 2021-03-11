@@ -1,11 +1,11 @@
 import React from 'react'
 import {View, StyleSheet, Text, TouchableOpacity} from 'react-native'
-import colors from '../assets/colors/colors'
+import colors from '../../assets/colors/colors'
 const SubHeader = (props) => {
-    const {style} = props
+    const {style, title, titleStyle} = props
     return (
         <View style={[styles.container,style]}>
-            <Text style={styles.title}>My Services</Text>
+            <Text style={[styles.title,titleStyle]}>{title}</Text>
             <TouchableOpacity>
                 <Text style={styles.viewAllLabel}>View All</Text>
             </TouchableOpacity>
@@ -17,7 +17,7 @@ const SubHeader = (props) => {
 const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
-        
+        alignItems: 'center',
         width: 315,
         height: 26
     },
@@ -28,7 +28,6 @@ const styles = StyleSheet.create({
         letterSpacing: -0.42,
         fontWeight: '500',
         fontFamily: 'Roboto-Medium',
-        marginRight: 180,
         
     },
     viewAllLabel: {
@@ -38,7 +37,8 @@ const styles = StyleSheet.create({
         textAlign: 'right',
         color: colors.yellow,
         fontSize: 14,
-        lineHeight: 16
+        lineHeight: 16,
+        
     }
 })
 

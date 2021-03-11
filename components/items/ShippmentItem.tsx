@@ -3,11 +3,18 @@ import {View, Text, StyleSheet, Image} from 'react-native'
 import colors from '../../assets/colors/colors'
 import MyIcons from '../MyIcons'
 
-const Item = (props) => {
+const iconSize = {
+    width: 23,
+    height: 28
+}
+
+const ShippmentItem = (props) => {
     const {style, data} = props
+    
+        
     return(
-        <View style={[styles.container,style]}>
-            <MyIcons style={styles.icon} disabled={true} source={data.icon} size={50}></MyIcons>
+        <View style={[styles.container,style, {backgroundColor: data.backgroundColor}]}>
+            <MyIcons size={iconSize} style={styles.icon} disabled={true} source={data.icon} ></MyIcons>
             <View style={styles.textWrapper}>
                 <Text style={styles.title}>{data.title}</Text>
                 <Text style={styles.subtitle}>{data.subtitle}</Text>
@@ -18,18 +25,16 @@ const Item = (props) => {
 
 const styles = StyleSheet.create({
     container: {
-        flexDirection: 'row',
-        backgroundColor: colors.lightGray,
-        borderRadius: 20,
-        alignItems: 'center',
-        justifyContent: 'center',
-        width: 235,
-        height: 118,
         
+        
+        borderRadius: 20,
+        width: 320,
+        height: 185,
         marginLeft: 30,
+        
     },
     textWrapper: {
-
+        marginLeft: 30,
     },
     title: {
         fontFamily: 'Roboto-Regular',
@@ -38,7 +43,8 @@ const styles = StyleSheet.create({
         fontSize: 18,
         lineHeight: 21,
         letterSpacing: -0.28,
-        color: colors.darkText,
+        color: colors.white,
+        marginBottom: 8
         
     },
     subtitle: {
@@ -48,11 +54,14 @@ const styles = StyleSheet.create({
         fontSize: 14,
         lineHeight: 26,
         letterSpacing: -0.22,
-        color: colors.lightText,
+        color: colors.white,
     },
     icon: {
-        marginRight: 15
+        marginTop: 36,
+        marginLeft: 30,
+        marginBottom: 27,
+        
     }
 })
 
-export default Item;
+export default ShippmentItem;
