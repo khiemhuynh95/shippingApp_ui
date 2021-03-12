@@ -3,12 +3,35 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import HomeScreen from './components/screens/HomeScreen';
 import HistoryScreen from './components/screens/HistoryScreen';
+
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+const Stack = createStackNavigator();
 export default function App() {
   return (
-    <HomeScreen></HomeScreen>
-    //<HistoryScreen></HistoryScreen>
+    <NavigationContainer>
+      <Stack.Navigator
+        screenOptions={{
+          headerShown: false
+        }}
+      >
+        <Stack.Screen name="Home"component={homeScreen} />
+        <Stack.Screen name="History" component={historyScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
+
+const homeScreen = ({ navigation }) => {
+  return (
+    <HomeScreen
+      navigation = {navigation}
+    />
+  );
+};
+const historyScreen = ({ navigation}) => {
+  return <HistoryScreen navigation = {navigation}></HistoryScreen>
+};
 
 const styles = StyleSheet.create({
   container: {

@@ -54,10 +54,11 @@ const renderItem = ({item}) => {
     );
 };
 
-const HistoryScreen = () => {
+const HistoryScreen = ({navigation}) => {
     return (
         <View style={styles.container}>
-            <Header style={styles.header} lightContent={false}></Header>     
+            <StatusBar barStyle="dark-content"></StatusBar>
+            <Header onIconPress={()=>{navigation.goBack()}} style={styles.header} lightContent={false}></Header>     
             <SubHeader style={styles.subHeader} 
                        title="Active Shippments"
                        titleStyle={{marginRight: 110}}>
@@ -97,6 +98,7 @@ const HistoryScreen = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        backgroundColor: colors.white
     },
     header: {
         right: 6

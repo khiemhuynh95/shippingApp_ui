@@ -25,7 +25,8 @@ const renderItem = ({item}) => {
     );
 };
 
-const HomeScreen = () => {
+const HomeScreen = ({navigation}) => {
+    
     const background_img1 = require('../../assets/images/1.png')
     const background_img2 = require('../../assets/images/2.png')
     return (
@@ -34,7 +35,7 @@ const HomeScreen = () => {
             <StatusBar barStyle="light-content"></StatusBar>
             
             <View style={styles.blueArea}>
-                <Header></Header>
+                <Header onIconPress={()=>{navigation.navigate('History')}}></Header>
                 <View style={styles.textWrapper}>
                     <Text style={styles.title}>Track your Shippment</Text>
                     <Text style={styles.subTitle}>Enter tracking code</Text>
@@ -73,7 +74,8 @@ const HomeScreen = () => {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1
+        flex: 1,
+        backgroundColor: colors.white
     },
     statusBar: {
         backgroundColor: colors.blue
@@ -137,8 +139,7 @@ const styles = StyleSheet.create({
 
     bottomArea: {
         bottom: 275,
-        
-        
+        height: '100%',
         width: '100%'
     },
 

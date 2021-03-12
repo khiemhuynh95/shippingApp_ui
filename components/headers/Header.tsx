@@ -15,7 +15,7 @@ const icon_size = {
 
 const Header =(props) => {
 
-    const {lightContent, style} = props
+    const {onIconPress,lightContent, style} = props
 
     const titleColor = lightContent ? colors.white : colors.black
     const setting_icon = lightContent ? require('./../../assets/images/ios-settings.png')
@@ -43,7 +43,7 @@ const Header =(props) => {
                         <Text style={[styles.title, {color: titleColor}]}>Tracker App</Text>
                         <Text style={styles.subTitle}>Powered by Panoply</Text>
                     </View>
-                    <MyIcons style={styles.icon} size={icon_size} source={setting_icon}></MyIcons>
+                    <MyIcons onPress={onIconPress} style={styles.icon} size={icon_size} source={setting_icon}></MyIcons>
                 </View>
             )
     }
