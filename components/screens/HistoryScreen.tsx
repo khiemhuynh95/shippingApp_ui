@@ -120,7 +120,7 @@ const styles = StyleSheet.create({
         
     },
     itemContainer: {
-        marginTop: 20,
+        marginTop: 25,
        
         height: '100%',
         marginRight: 15,

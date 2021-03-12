@@ -31,6 +31,7 @@ const styles = StyleSheet.create({
         
     },
     viewAllLabel: {
+        position: 'absolute',
         fontFamily: 'Roboto-Regular',
         fontWeight: '500',
         letterSpacing: -0.25,
@@ -38,7 +39,8 @@ const styles = StyleSheet.create({
         color: colors.yellow,
         fontSize: 14,
         lineHeight: 16,
-        
+        left: 10,
+        top: -6
     }
 })
 

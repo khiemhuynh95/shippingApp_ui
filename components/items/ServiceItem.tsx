@@ -3,11 +3,16 @@ import {View, Text, StyleSheet, Image} from 'react-native'
 import colors from '../../assets/colors/colors'
 import MyIcons from '../MyIcons'
 
+const iconSize={
+    width: 50,
+    height: 50
+}
+
 const ServiceItem = (props) => {
     const {style, data} = props
     return(
         <View style={[styles.container,style]}>
-            <MyIcons style={styles.icon} disabled={true} source={data.icon} size={50}></MyIcons>
+            <MyIcons style={styles.icon} disabled={true} source={data.icon} size={iconSize}></MyIcons>
             <View style={styles.textWrapper}>
                 <Text style={styles.title}>{data.title}</Text>
                 <Text style={styles.subtitle}>{data.subtitle}</Text>

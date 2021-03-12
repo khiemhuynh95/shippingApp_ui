@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
         top: 40
     },
     image_box2: {
-        left: 35,
+        left: 47,
         top: 5
     },
     textWrapper: {

@@ -8,9 +8,14 @@ const SearchBar = () => {
     const filling_icon = require('./../assets/images/ios-filling.png')
     const go_icon = require('./../assets/images/ios-go.png')
     
+    const iconSize = {
+        width: 20,
+        height: 20
+    }
+
     return(
         <View style={styles.container}>
-            <MyIcons disabled={true} style={styles.filling_icon} source={filling_icon} size={20} ></MyIcons>
+            <MyIcons disabled={true} style={styles.filling_icon} source={filling_icon} size={iconSize} ></MyIcons>
             
                 
             <TextInput
@@ -20,7 +25,7 @@ const SearchBar = () => {
                 value={value}
             ></TextInput>
             
-            <MyIcons style={styles.go_icon} source={go_icon} size={25} ></MyIcons>
+            <MyIcons style={styles.go_icon} source={go_icon} size={{width: 25, height: 25}} ></MyIcons>
         </View>
     )
 }

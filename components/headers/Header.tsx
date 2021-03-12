@@ -31,16 +31,19 @@ const Header =(props) => {
     else {
             return(
                 <View style={[styles.container,style]}> 
-                    <Avatar
-                        rounded
-                        source={require('./../../assets/images/cat.jpg')}
-                        size={40}
-                    ></Avatar>
+                    <View style={styles.avatar}>
+                        <Avatar
+                            rounded
+                            source={require('./../../assets/images/cat.jpg')}
+                            size={40}
+                        ></Avatar>
+                    </View>
+                    
                     <View style={styles.textWrapper}>
                         <Text style={[styles.title, {color: titleColor}]}>Tracker App</Text>
                         <Text style={styles.subTitle}>Powered by Panoply</Text>
                     </View>
-                    <MyIcons size={icon_size} source={setting_icon}></MyIcons>
+                    <MyIcons style={styles.icon} size={icon_size} source={setting_icon}></MyIcons>
                 </View>
             )
     }
@@ -80,6 +83,14 @@ const styles = StyleSheet.create({
         lineHeight: 14,
         fontWeight:'normal',
         letterSpacing: -0.21,
+    },
+    icon: {
+        position: 'absolute',
+        right: 0
+    },
+    avatar: {
+        position: 'absolute',
+        left: 5
     }
 });
 

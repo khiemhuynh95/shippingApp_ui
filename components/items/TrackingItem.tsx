@@ -70,9 +70,10 @@ const styles = StyleSheet.create({
         marginRight: 30
     },
     date: {
+        position: 'absolute',
         color: colors.lightText,
-        top: 16,
-        right: 8
+        top: 30,
+        right: -12
     },
     
 })
