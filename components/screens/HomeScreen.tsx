@@ -1,11 +1,17 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, SafeAreaView,StatusBar, FlatList } from 'react-native';
+import { StyleSheet, Text, View, Image, SafeAreaView,StatusBar, FlatList, Dimensions } from 'react-native';
 import  Header  from '../headers/Header';
 import colors from '../../assets/colors/colors';
 import SearchBar from '../SearchBar';
 import SubHeader from '../headers/SubHeader'
 import ServiceItem from '../items/ServiceItem'
 
+//illustration
+import Illustration1 from '../../assets/images/1.svg'
+import Illustration2 from '../../assets/images/2.svg'
+
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
 const data = [
     {
         icon: require('../../assets/images/fly.png'),
@@ -44,12 +50,8 @@ const HomeScreen = ({navigation}) => {
                 
             </View>
             <View style={styles.image_area}>
-                <View style={styles.image_box1}>
-                    <Image source={background_img1}></Image>
-                </View>
-                <View style={styles.image_box2}>
-                    <Image source={background_img2}></Image>
-                </View>
+                <Illustration1 style={styles.image_box1} ></Illustration1>
+                <Illustration2 style={styles.image_box2} ></Illustration2>
             </View>
 
             
@@ -101,7 +103,7 @@ const styles = StyleSheet.create({
         top: 40
     },
     image_box2: {
-        left: 47,
+        left: 32,
         top: 5
     },
     textWrapper: {
