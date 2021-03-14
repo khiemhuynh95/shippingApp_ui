@@ -10,7 +10,7 @@ const SubHeader = (props) => {
     return (
         <View style={[styles.container,style]}>
             <Text style={[styles.title,titleStyle]}>{title}</Text>
-            <TouchableOpacity>
+            <TouchableOpacity style={styles.labelWrapper}>
                 <Text style={styles.viewAllLabel}>View All</Text>
             </TouchableOpacity>
             
@@ -22,7 +22,8 @@ const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
         alignItems: 'center',
-        
+        justifyContent: 'space-between',
+        marginHorizontal: 30
     },
     title: {
         color: colors.darkText,
@@ -31,13 +32,18 @@ const styles = StyleSheet.create({
         letterSpacing: -0.42,
         fontWeight: '500',
         fontFamily: 'Roboto-Medium',
-        left: windowWidth*0.04,
-        textAlign: 'center',
-        position: "absolute"
+       
+        textAlign: 'right',
+        
         
     },
+    labelWrapper: {
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+
     viewAllLabel: {
-        position: 'absolute',
+        
         fontFamily: 'Roboto-Regular',
         fontWeight: '500',
         letterSpacing: -0.25,
@@ -45,9 +51,9 @@ const styles = StyleSheet.create({
         color: colors.yellow,
         fontSize: 14,
         lineHeight: 16,
-        right: windowWidth*0.08,
-        top: -10
-    }
+        
+    },
+
 })
 
 export default SubHeader;

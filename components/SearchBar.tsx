@@ -36,7 +36,6 @@ const SearchBar = (props) => {
 const styles = StyleSheet.create({
     container: {
         backgroundColor: 'white',
-        width: 340,
         height: 60,
         
         alignSelf:'center',
@@ -44,20 +43,28 @@ const styles = StyleSheet.create({
         marginTop: 40,
         flexDirection: 'row',
         alignItems: 'center',
+        justifyContent: 'space-between',
         
+       
     },
     textInput: {
-        alignSelf: 'stretch',
+        flex: 1,
         fontFamily: 'Roboto-Regular',
-        width: '70%'
+        
+        //backgroundColor: 'red',
+        
+        
+        lineHeight: 20,
+        
     },
     filling_icon: {
         
         marginHorizontal: 22
     },
     go_icon: {
-        position: 'absolute',
-        right: 20
+       
+        marginRight: 20,
+        //backgroundColor: 'red'
     }
 })
 

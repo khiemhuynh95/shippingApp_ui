@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
         backgroundColor: colors.white
     },
     header: {
-        right: 6,
+     
         marginBottom: 20
     },
     subHeader: {
@@ -124,7 +124,7 @@ const styles = StyleSheet.create({
         marginTop: 25,
        
         height: '100%',
-        marginRight: 15,
+        
         zIndex: 1
     },
     line: {

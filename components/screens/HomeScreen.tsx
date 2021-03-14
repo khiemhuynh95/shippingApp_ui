@@ -136,7 +136,7 @@ const styles = StyleSheet.create({
     },
     subHeader: {
         
-        alignSelf: 'center',
+        
         marginBottom: 50,
         marginTop: 40
         
@@ -148,7 +148,9 @@ const styles = StyleSheet.create({
         width: '100%'
     },
     searchBar: {
-        width: '80%'
+        
+        marginHorizontal: 30,
+        
     }
 
 })

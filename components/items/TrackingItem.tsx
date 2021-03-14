@@ -40,12 +40,14 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         
         alignItems: 'center',
-        marginBottom: 35
+        marginBottom: 35,
+        
+        
         
     },
     textWrapper: {
         
-        width: 200,
+      
     },
     title: {
         fontFamily: 'Roboto-Regular',
@@ -74,7 +76,7 @@ const styles = StyleSheet.create({
         position: 'absolute',
         color: colors.lightText,
         top: 30,
-        right: windowWidth*0.01
+        right: 0
     },
     
 })

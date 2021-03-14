@@ -43,7 +43,10 @@ const Header =(props) => {
                         <Text style={[styles.title, {color: titleColor}]}>Tracker App</Text>
                         <Text style={styles.subTitle}>Powered by Panoply</Text>
                     </View>
-                    <MyIcons onPress={onIconPress} style={styles.icon} size={icon_size} source={setting_icon}></MyIcons>
+                    <View style={styles.icon}>
+                        <MyIcons onPress={onIconPress}  size={icon_size} source={setting_icon}></MyIcons>
+                    </View>
+                    
                 </View>
             )
     }
@@ -55,16 +58,20 @@ const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
         alignItems: 'center',
-        justifyContent: 'center',
+        
         
         marginTop: 60,
         marginHorizontal: 30,
+        justifyContent: 'space-between'
+        
     },
     textWrapper: {
         alignItems: 'center',
         justifyContent: 'center',
         textAlign: 'center',
-        marginHorizontal: 90
+        
+       
+
     },
     title: {
         
@@ -85,12 +92,12 @@ const styles = StyleSheet.create({
         letterSpacing: -0.21,
     },
     icon: {
-        position: 'absolute',
-        right: 0
+        
+        
+        
     },
     avatar: {
-        position: 'absolute',
-        left: 5
+        
     }
 });
 
