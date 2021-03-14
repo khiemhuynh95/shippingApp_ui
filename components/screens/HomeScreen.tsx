@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, SafeAreaView,StatusBar, FlatList, Dimensions } from 'react-native';
+import { StyleSheet, Text, View, StatusBar, FlatList, Dimensions } from 'react-native';
 import  Header  from '../headers/Header';
 import colors from '../../assets/colors/colors';
 import SearchBar from '../SearchBar';
@@ -33,8 +33,6 @@ const renderItem = ({item}) => {
 
 const HomeScreen = ({navigation}) => {
     
-    const background_img1 = require('../../assets/images/1.png')
-    const background_img2 = require('../../assets/images/2.png')
     return (
         <View style={styles.container}>
             
@@ -46,24 +44,20 @@ const HomeScreen = ({navigation}) => {
                     <Text style={styles.title}>Track your Shippment</Text>
                     <Text style={styles.subTitle}>Enter tracking code</Text>
                 </View>
-                <SearchBar></SearchBar>
+                <SearchBar style={styles.searchBar}></SearchBar>
                 
             </View>
             <View style={styles.image_area}>
-                {/* <View style={styles.image_box1}>
-                    <Image source={background_img1}></Image>
-                </View> */}
+                
                 <Illustration1 style={styles.image_box1} ></Illustration1>
                 <Illustration2 style={styles.image_box2} ></Illustration2>
-                {/* <View style={styles.image_box2}>
-                    <Image source={background_img2}></Image>
-                </View> */}
+                
             </View>
 
             
             <View style={styles.bottomArea}>     
                 <SubHeader  title="My Services" 
-                            titleStyle={{marginRight: 180}} 
+                         
                             style={styles.subHeader}>            
                 </SubHeader>
                 <FlatList
@@ -106,10 +100,12 @@ const styles = StyleSheet.create({
         flexDirection: 'row'
     },
     image_box1: {
+
         top: 40
     },
     image_box2: {
-        left: 32,
+        position: 'absolute',
+        right: 0,
         top: 5
     },
     textWrapper: {
@@ -139,9 +135,10 @@ const styles = StyleSheet.create({
         letterSpacing: -0.25,
     },
     subHeader: {
-        right: 20,
+        
         alignSelf: 'center',
-        marginBottom: 30,
+        marginBottom: 50,
+        marginTop: 40
         
     },
 
@@ -150,7 +147,9 @@ const styles = StyleSheet.create({
         height: '100%',
         width: '100%'
     },
-
+    searchBar: {
+        width: '80%'
+    }
 
 })
 

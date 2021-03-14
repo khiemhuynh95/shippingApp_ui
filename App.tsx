@@ -6,20 +6,38 @@ import HistoryScreen from './components/screens/HistoryScreen';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+
+
+import AppLoading from 'expo-app-loading';
+import { useFonts } from 'expo-font';
+
 const Stack = createStackNavigator();
+
+//1. Needs to fix font bug
 export default function App() {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator
-        screenOptions={{
-          headerShown: false
-        }}
-      >
-        <Stack.Screen name="Home"component={homeScreen} />
-        <Stack.Screen name="History" component={historyScreen} />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
+
+  let [fontsLoaded] = useFonts({
+    'Roboto-Regular': require('./assets/fonts/Roboto-Regular.ttf'),
+    'Roboto-Medium': require('./assets/fonts/Roboto-Medium.ttf'),
+  });
+
+  if (!fontsLoaded) {
+    return <AppLoading />;
+  } else {
+
+    return (
+      <NavigationContainer>
+        <Stack.Navigator
+          screenOptions={{
+            headerShown: false
+          }}
+        >
+          <Stack.Screen name="Home" component={homeScreen} />
+          <Stack.Screen name="History" component={historyScreen} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    );
+  }
 }
 
 const homeScreen = ({ navigation }) => {

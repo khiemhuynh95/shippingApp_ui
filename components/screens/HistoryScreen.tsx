@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, StatusBar, FlatList } from 'react-native';
+import { StyleSheet, Text, View, Image, StatusBar, FlatList, Dimensions} from 'react-native';
 import colors from '../../assets/colors/colors'
 import Header from '../headers/Header'
 import SubHeader from '../headers/SubHeader'
@@ -53,7 +53,8 @@ const renderItem = ({item}) => {
       <ShippmentItem data={item}></ShippmentItem>
     );
 };
-
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
 const HistoryScreen = ({navigation}) => {
     return (
         <View style={styles.container}>
@@ -61,7 +62,7 @@ const HistoryScreen = ({navigation}) => {
             <Header onIconPress={()=>{navigation.goBack()}} style={styles.header} lightContent={false}></Header>     
             <SubHeader style={styles.subHeader} 
                        title="Active Shippments"
-                       titleStyle={{marginRight: 110}}>
+                       >
             </SubHeader>
             <View style={styles.listContainer}>
                 <FlatList
@@ -71,15 +72,15 @@ const HistoryScreen = ({navigation}) => {
                     keyExtractor={keyExtractor}
                     renderItem={renderItem}
                 />
+            <SubHeader style={styles.subHeader}
+                           title="History"
+                           >
+                </SubHeader>
             </View>
+            
             <View style={styles.bottomArea}>
                 
-                <SubHeader style={styles.subHeader}
-                           title="History"
-                           titleStyle={{marginRight: 215}}
-                           >
-
-                </SubHeader>
+                
                 <View style={styles.line}></View>
                 <View style={styles.itemContainer}>
                     <TrackingItem isActive={true} data={tracking_data[0]}></TrackingItem>
@@ -101,17 +102,15 @@ const styles = StyleSheet.create({
         backgroundColor: colors.white
     },
     header: {
-        right: 6
+        right: 6,
+        marginBottom: 20
     },
     subHeader: {
-        right: 35,
-        alignSelf: 'center',
         marginBottom: 30,
-        marginLeft: 30,
         marginTop: 50,
     },
     listContainer: {
-        
+        marginTop: 20
     },
 
     bottomArea: {
@@ -135,7 +134,7 @@ const styles = StyleSheet.create({
         backgroundColor: colors.lightGray,
         left: 25,
         zIndex: 0,
-        top: 150
+        top: '5%'
         
     }
 

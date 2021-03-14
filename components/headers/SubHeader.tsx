@@ -1,6 +1,10 @@
 import React from 'react'
-import {View, StyleSheet, Text, TouchableOpacity} from 'react-native'
+import {View, StyleSheet, Text, TouchableOpacity, Dimensions} from 'react-native'
 import colors from '../../assets/colors/colors'
+
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
+
 const SubHeader = (props) => {
     const {style, title, titleStyle} = props
     return (
@@ -18,8 +22,7 @@ const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
         alignItems: 'center',
-        width: 315,
-        height: 26
+        
     },
     title: {
         color: colors.darkText,
@@ -28,6 +31,9 @@ const styles = StyleSheet.create({
         letterSpacing: -0.42,
         fontWeight: '500',
         fontFamily: 'Roboto-Medium',
+        left: windowWidth*0.04,
+        textAlign: 'center',
+        position: "absolute"
         
     },
     viewAllLabel: {
@@ -39,8 +45,8 @@ const styles = StyleSheet.create({
         color: colors.yellow,
         fontSize: 14,
         lineHeight: 16,
-        left: 10,
-        top: -6
+        right: windowWidth*0.08,
+        top: -10
     }
 })
 

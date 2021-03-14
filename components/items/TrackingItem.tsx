@@ -1,5 +1,5 @@
 import React from 'react'
-import {View, Text, StyleSheet, Image} from 'react-native'
+import {View, Text, StyleSheet, Image,Dimensions} from 'react-native'
 import colors from '../../assets/colors/colors'
 import MyIcons from '../MyIcons'
 
@@ -18,7 +18,8 @@ const shawdow = {
         shadowRadius: 9,
         shadowOpacity: 0.15
 }
-
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
 const TrackingItem = (props) => {
     const {style, data, isActive} = props
     return(
@@ -44,7 +45,7 @@ const styles = StyleSheet.create({
     },
     textWrapper: {
         
-        width: 200
+        width: 200,
     },
     title: {
         fontFamily: 'Roboto-Regular',
@@ -73,7 +74,7 @@ const styles = StyleSheet.create({
         position: 'absolute',
         color: colors.lightText,
         top: 30,
-        right: -12
+        right: windowWidth*0.01
     },
     
 })

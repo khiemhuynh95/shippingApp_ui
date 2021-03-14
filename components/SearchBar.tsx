@@ -3,7 +3,10 @@ import {Text, View, StyleSheet, TextInput, Image} from 'react-native'
 import MyIcons from './MyIcons'
 
 
-const SearchBar = () => {
+const SearchBar = (props) => {
+
+    const {style} = props
+
     const [value, onChangeText] = React.useState('');
     const filling_icon = require('./../assets/images/ios-filling.png')
     const go_icon = require('./../assets/images/ios-go.png')
@@ -14,7 +17,7 @@ const SearchBar = () => {
     }
 
     return(
-        <View style={styles.container}>
+        <View style={[styles.container, style]}>
             <MyIcons disabled={true} style={styles.filling_icon} source={filling_icon} size={iconSize} ></MyIcons>
             
                 
@@ -53,7 +56,8 @@ const styles = StyleSheet.create({
         marginHorizontal: 22
     },
     go_icon: {
-        marginRight: 22
+        position: 'absolute',
+        right: 20
     }
 })
 
