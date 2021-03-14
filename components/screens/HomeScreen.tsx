@@ -5,8 +5,8 @@ import colors from '../../assets/colors/colors';
 import SearchBar from '../SearchBar';
 import SubHeader from '../headers/SubHeader'
 import ServiceItem from '../items/ServiceItem'
+import Svg from 'react-native-svg';
 
-//illustration
 import Illustration1 from '../../assets/images/1.svg'
 import Illustration2 from '../../assets/images/2.svg'
 
@@ -50,8 +50,14 @@ const HomeScreen = ({navigation}) => {
                 
             </View>
             <View style={styles.image_area}>
+                {/* <View style={styles.image_box1}>
+                    <Image source={background_img1}></Image>
+                </View> */}
                 <Illustration1 style={styles.image_box1} ></Illustration1>
                 <Illustration2 style={styles.image_box2} ></Illustration2>
+                {/* <View style={styles.image_box2}>
+                    <Image source={background_img2}></Image>
+                </View> */}
             </View>
 
             
